@@ -1466,6 +1466,763 @@ fourthscene(){
       }
 }
 
+ //beginig of fifth scene
+  
+  void fifthscene(){
+		  	bool open=false;
+		  	int page=1;
+	        
+ 	        house(open);
+			 	
+	        fences();
+	
+        	trees(0,0);
+	
+            mountainsGrey();
+	
+           
+	        sun(0,0);
+	        int i=0;
+	        for( i=0; i<230; i++){
+	        	 setactivepage(page);
+	             setvisualpage(1-page);	
+	        	 cleardevice();
+	        	 
+	        	 house(open);			 	
+	        	 fences();
+        		 trees(0,0);
+           		 mountainsGrey();
+	        	 sun(0,0);
+	        	 
+	       		 if(i>150){
+	        		personFourth(70-i/9,20-i+10);	
+				}
+				else{
+					personFourth(70,20-i+10);	
+				}
+	        	
+	       		 delay(10);
+	        	 page=1-page;
+				}
+
+          for(int j=0; j<30; j++){
+	        	 setactivepage(page);
+	             setvisualpage(1-page);
+	        	
+	        	 cleardevice();
+	        	 house(!open);
+	             fences();
+        	     trees(0,0);
+                 mountainsGrey();
+	             sun(0,0);
+	             personFourth(60-j,-210-j+10);				
+	             delay(10);
+	             page=1-page;
+			  }
+
+ 			  
+}
+
+
+//beginig of sixth scene
+ 
+
+void sixthscene(){
+		bool open=false;
+  	    int page=1;
+	       
+		   for(int i=3; i<60; i++){
+			   	setactivepage(page);
+		        setvisualpage(1-page);
+	 	        cleardevice(); 
+				 house(open);
+				 	
+		        fences();
+		
+	        	trees(0,0);
+		
+	            mountainsGrey();       
+		        sun(-9*i,-4*i);
+		        delay(150);    
+		        page=1-page;
+		        
+		      }  
+		  
+		  page=1;
+		  
+		  	for(int j=3; j<75; j++){
+				setactivepage(page);
+		        setvisualpage(1-page);
+	 	        cleardevice(); 
+		         cleardevice();
+				  
+				 house(open);	
+		         fences();
+	        	 trees(0,0);
+	             mountainsGrey();
+		         sun(-522-9*j,-232+4*j);
+		         delay(150);
+				  page=1-page;
+				  	}	
+		
+}
+  
+  //beginig of seventh scene
+  void person7(int xx, int yy,bool apple,bool basket){
+  	setcolor(15);
+  	
+  	//head
+  	ellipse(630+xx,300+yy,0,180,20,20);
+  	
+  	//hair
+  	setfillstyle(1,10);
+  	line(610+xx,350+yy,610+xx,300+yy);
+  	ellipse(602+xx,340+yy,230,340,10,25);
+  	ellipse(602+xx,340+yy,100,270,10,13);
+  	ellipse(602+xx,320+yy,100,270,10,13);
+  	ellipse(602+xx,300+yy,100,270,10,13);
+  	ellipse(602+xx,280+yy,100,270,10,13);
+  	ellipse(602+xx,280+yy,50,180,10,13);
+  	ellipse(625+xx,276+yy,0,180,25,17);
+  	ellipse(650+xx,280+yy,300,100,10,13);
+  	ellipse(660+xx,300+yy,300,100,10,13);
+  	ellipse(660+xx,315+yy,280,100,10,13);
+  	ellipse(660+xx,335+yy,310,100,10,13);
+  	ellipse(660+xx,343+yy,230,10,10,16);
+  	line(655+xx,360+yy,650+xx,300+yy);
+  	//floodfill(660+xx,335+yy,WHITE);
+  	
+  	//chin
+  	setfillstyle(1,12);
+  	ellipse(630+xx,300+yy,180,0,20,40);
+  	floodfill(630+xx,307+yy,15);
+  	setfillstyle(1,0);
+  	circle(620+xx,307+yy,3);
+  	circle(638+xx,307+yy,3);
+  	line(629+xx,308+yy,629+xx,320+yy);
+  	ellipse(630+xx,329+yy,360,0,8,3);
+  	floodfill(620+xx,307+yy,15);
+  	floodfill(638+xx,307+yy,15);
+  	
+  	//neck
+  	setfillstyle(1,15);
+
+  	line(623+xx,338+yy,623+xx,350+yy);//neck
+  	line(635+xx,338+yy,635+xx,350+yy);//neck
+  	line(666+xx,350+yy,595+xx,350+yy);//tie
+  	line(643+xx,350+yy,630+xx,370+yy);//tie
+  	line(615+xx,350+yy,630+xx,370+yy);//tie
+  	floodfill(630+xx,365+yy,15);
+  	//hands	
+	if(apple) {
+		setfillstyle(1,1);
+	   line(595+xx,350+yy,520+xx,380+yy);//-hand
+	   line(595+xx,390+yy,520+xx,395+yy);//-hand
+	   line(530+xx,378+yy,530+xx,395+yy);
+	   line(520+xx,380+yy,520+xx,395+yy);
+
+	  }
+      
+      else{
+	    line(595+xx,350+yy,560+xx,420+yy);//-hand
+	  	line(595+xx,390+yy,570+xx,430+yy);//-hand
+	  	line(560+xx,420+yy,570+xx,430+yy);
+	  	line(560+xx,420+yy,555+xx,436+yy);
+	  	line(570+xx,430+yy,565+xx,440+yy);
+	  	line(555+xx,436+yy,565+xx,440+yy);
+	  }
+	  	line(666+xx,350+yy,700+xx,420+yy);//+hand
+	  	line(666+xx,390+yy,690+xx,430+yy);//+hand
+	  	line(700+xx,420+yy,690+xx,430+yy);
+	  	line(690+xx,430+yy,691+xx,438+yy);
+	    line(700+xx,420+yy,704+xx,432+yy);
+	  	line(704+xx,432+yy,691+xx,438+yy);
+  	
+  	
+  	if(basket){
+
+	  	ellipse(560+xx,465+yy,0,180,30,40);	
+	  	ellipse(560+xx,469+yy,0,180,30,40);
+	  	setfillstyle(1,BROWN);	
+	    ellipse(559+xx,460+yy,0,360,30,10);
+		floodfill(560+xx,460+yy,15); 	
+	  	ellipse(560+xx,460+yy,180,0,30,40);	
+	  	floodfill(560+xx,490+yy,15);
+	  }
+  	//body
+  
+  	setfillstyle(1,1);
+  	line(595+xx,390+yy,595+xx,490+yy);
+  	line(666+xx,390+yy,666+xx,490+yy);
+  	line(620+xx,350+yy,620+xx,472+yy);
+  	line(641+xx,350+yy,641+xx,472+yy);
+  	line(620+xx,430+yy,641+xx,430+yy);
+  	ellipse(673+xx,470+yy,190,260,32,20);
+  	ellipse(590+xx,470+yy,280,360,32,20);
+  //	line(625+xx,420+yy,628+xx,420+yy);
+  
+  	floodfill(653+xx,465+yy,15);
+  	floodfill(613+xx,465+yy,15);
+  	setfillstyle(1,0);
+	floodfill(625+xx,420+yy,15);
+
+  	//legs
+  	setfillstyle(1,0);
+  	line(646+xx,480+yy,646+xx,530+yy);//+leg
+  	line(666+xx,480+yy,666+xx,530+yy);
+  	line(646+xx,530+yy,666+xx,530+yy);
+  	ellipse(657+xx,525+yy,0,180,10,10);
+  	floodfill(657+xx,505+yy,15);
+  	line(595+xx,482+yy,595+xx,530+yy);//-leg
+  	line(618+xx,478+yy,618+xx,530+yy);
+  	line(598+xx,530+yy,618+xx,530+yy);
+  	ellipse(608+xx,525+yy,0,180,10,10);
+  	floodfill(607+xx,505+yy,15);
+  }
+  
+  void personsitting(int xx,int yy){
+  	setcolor(15);
+  	//head
+  	ellipse(630+xx,300+yy,0,180,20,20);
+  	
+  	//hair
+  	setfillstyle(1,15);
+  	line(610+xx,350+yy,610+xx,300+yy);
+  	ellipse(602+xx,340+yy,230,340,10,25);
+  	ellipse(602+xx,340+yy,100,270,10,13);
+  	ellipse(602+xx,320+yy,100,270,10,13);
+  	ellipse(602+xx,300+yy,100,270,10,13);
+  	ellipse(602+xx,280+yy,100,270,10,13);
+  	ellipse(602+xx,280+yy,50,180,10,13);
+  	ellipse(625+xx,276+yy,0,180,25,17);
+  	ellipse(650+xx,280+yy,300,100,10,13);
+  	ellipse(660+xx,300+yy,300,100,10,13);
+  	ellipse(660+xx,315+yy,280,100,10,13);
+  	ellipse(660+xx,335+yy,310,100,10,13);
+  	ellipse(660+xx,343+yy,230,10,10,16);
+  	line(655+xx,360+yy,650+xx,300+yy);
+  	//floodfill(660+xx,335+yy,WHITE);
+  	
+  	//chin
+  	setfillstyle(1,12);
+  	ellipse(630+xx,300+yy,180,0,20,40);
+  	floodfill(630+xx,307+yy,15);
+  	setfillstyle(1,0);
+  	circle(620+xx,307+yy,3);
+  	circle(638+xx,307+yy,3);
+  	line(629+xx,308+yy,629+xx,320+yy);
+  	ellipse(630+xx,329+yy,360,0,8,3);
+  	floodfill(620+xx,307+yy,15);
+  	floodfill(638+xx,307+yy,15);
+  	
+    //neck
+  	setfillstyle(1,15);
+
+  	line(623+xx,338+yy,623+xx,350+yy);//neck
+  	line(635+xx,338+yy,635+xx,350+yy);//neck
+  	line(666+xx,350+yy,595+xx,350+yy);//tie
+  	line(643+xx,350+yy,630+xx,370+yy);//tie
+  	line(615+xx,350+yy,630+xx,370+yy);//tie
+  	floodfill(630+xx,365+yy,15);
+  	//hands	
+	 
+  	line(595+xx,350+yy,560+xx,420+yy);//-hand
+  	line(595+xx,390+yy,570+xx,430+yy);//-hand
+  	line(560+xx,420+yy,570+xx,430+yy);
+  	line(560+xx,420+yy,555+xx,436+yy);
+  	line(570+xx,430+yy,565+xx,440+yy);
+  	line(555+xx,436+yy,565+xx,440+yy);
+
+  	line(666+xx,350+yy,700+xx,420+yy);//+hand
+  	line(666+xx,390+yy,690+xx,430+yy);//+hand
+  	line(700+xx,420+yy,690+xx,430+yy);
+  	line(690+xx,430+yy,691+xx,438+yy);
+    line(700+xx,420+yy,704+xx,432+yy);
+  	line(704+xx,432+yy,691+xx,438+yy);
+  	
+
+  	//body
+  
+  	setfillstyle(1,1);
+  	line(595+xx,390+yy,595+xx,440+yy);
+  	line(666+xx,390+yy,666+xx,440+yy);
+  	line(620+xx,350+yy,620+xx,422+yy);
+  	line(641+xx,350+yy,641+xx,422+yy);
+  	line(620+xx,420+yy,641+xx,420+yy);
+  	ellipse(673+xx,420+yy,190,260,32,20);
+  	ellipse(590+xx,420+yy,280,360,32,20);
+
+  
+  	floodfill(653+xx,415+yy,15);
+  	floodfill(613+xx,415+yy,15);
+  	setfillstyle(1,0);
+	floodfill(625+xx,370+yy,15);
+
+//legs
+    setcolor(0);
+  	setfillstyle(1,0);
+  	line(650+xx,420+yy,655+xx,470+yy);//+leg
+  	line(669+xx,420+yy,675+xx,470+yy);
+  	line(655+xx,470+yy,675+xx,470+yy);  	
+    ellipse(660+xx,421+yy,0,180,10,10);
+  	floodfill(660+xx,428+yy,0);
+  	setcolor(15);
+ 	ellipse(665+xx,465+yy,0,180,10,10);
+ 	
+ 	setcolor(0);
+  	setfillstyle(1,0);
+  	line(600+xx,420+yy,605+xx,470+yy);//-leg
+  	line(619+xx,420+yy,625+xx,470+yy);
+  	line(605+xx,470+yy,625+xx,470+yy);  	
+    ellipse(610+xx,421+yy,0,180,10,10);
+  	floodfill(610+xx,428+yy,0);
+  	setcolor(15);
+ 	ellipse(615+xx,465+yy,0,180,10,10);
+  	
+  }
+  
+  void basket(){
+  	setcolor(15);
+  		//basket
+    ellipse(260,565,0,180,30,40);	
+  	ellipse(260,569,0,180,30,40);
+  	setfillstyle(1,BROWN);	
+    ellipse(259,560,0,360,30,10);
+	floodfill(260,560,15); 	
+  	ellipse(260,560,180,0,30,40);	
+  	floodfill(260,590,15);
+  	
+  }
+  
+ 
+
+
+  void seventhscene(){
+	  		bool open=false;
+	  	    int page=1;
+ 	        house(open);
+				
+	        fences();
+	
+        	trees(0,0);
+	
+            mountainsGrey();
+	
+           
+	        sun(0,0);
+
+	       for(int i=0; i<87; i++) {
+		       	setactivepage(page);
+		        setvisualpage(1-page);
+		       	cleardevice();
+		       	 house(open);
+				 	
+		        fences();
+		
+	        	trees(0,0);
+		
+	            mountainsGrey();
+	            
+	            
+	            sun(0,0);
+	            
+		       	 person7(40,0+i,false,true);
+		       	 delay(70);
+		       	 page=1-page;
+			   
+			   }
+		   
+		 
+		   page=1;
+		   int x=40;
+	       for(int i=0; i<2; i++) {
+		       	setactivepage(page);
+		        setvisualpage(1-page);
+		       	cleardevice();
+		       	 house(open);
+				 	
+		        fences();
+		         
+	        	trees(0,0);
+		
+	            mountainsGrey();
+	            
+	            sun(0,0);
+	            
+	            x=x-195;
+		       	 person7(x,0+70,false,true);
+		       	 delay(970);
+		       	 page=1-page;
+			   
+			   }
+			 
+		
+		for(int i=0; i<150; i++){
+					if(i==1){
+				      delay(1000);
+		        	}
+				setactivepage(page);
+		        setvisualpage(1-page);
+		       	cleardevice();
+		       	house(open);
+				 	
+		        fences();
+		      
+	        	trees(-15,i);
+		
+	            mountainsGrey();
+	            
+	            sun(0,0);
+	            
+				personsitting(-470,170);
+		      	basket();
+				delay(10);
+				page=1-page;
+			 
+
+		}  
+	     
+		for(int i=0; i<150; i++){
+			if(i==1){
+				delay(1000);
+			}
+				setactivepage(page);
+		        setvisualpage(1-page);
+		       	cleardevice();
+		       	house(open);
+				 	
+		        fences();
+		
+	        	trees(-15,150-i);
+		     
+	            mountainsGrey();
+	            
+	            sun(0,0);
+			    personsitting(-470,170);
+			 
+			   
+				basket();	
+				delay(10);
+				page=1-page;
+		 
+		 if(i==40){
+		 		for(int k=0; k<240; k++){
+					if(k==1){
+						delay(100);
+					}
+					setactivepage(page);
+			        setvisualpage(1-page);
+			       	cleardevice();
+			       	house(open);
+					 	
+			        fences();
+			 
+		        	trees(-15+k,100+k+5);
+			
+		            mountainsGrey();
+		           
+		           sun(0,0);
+		           
+				   personsitting(-470,170);	
+				   basket();
+				   delay(10);
+				   page=1-page;
+			i++;
+				 }
+		
+				}  
+  }
+  
+  
+    for(int i=0; i<2; i++){
+    			if(i==1){
+				delay(1000);
+			}
+				setactivepage(page);
+		        setvisualpage(1-page);
+		       	cleardevice();
+		       	house(open);
+				 	
+		        fences();
+		
+	        	trees(175,223);
+		       
+	            mountainsGrey();
+	            
+	            sun(0,0);
+	            
+	            person7(-155,0+70,true,false);
+	            
+	            //upper arrow
+	            line(370,380,362,395);
+	            line(370,380,378,395);
+	            line(370,440,370,380);
+	            
+	            //lower arrow
+	            line(372,540,372,580);
+	            line(372,580,362,565);
+	            line(372,580,378,565); 
+				basket();
+				delay(3000);
+				page=1-page;
+			 
+	}
+	
+	
+	for(int i=0; i<132; i++){
+
+			setactivepage(page);
+	        setvisualpage(1-page);
+	       	cleardevice();
+	       	house(open);
+			 	
+	        fences();
+	
+        	trees(175,223+i);
+	        
+            mountainsGrey();
+            
+            sun(0,0);
+            
+            person7(-155,0+70,true,false);
+            basket();
+
+			 delay(10);
+			 page=1-page;
+
+		 
+	}
+	page=1;
+	
+		for(int i=0; i<13; i++){
+			
+			if(i==1){
+				delay(1000);
+			}
+
+			setactivepage(page);
+	        setvisualpage(1-page);
+	       	cleardevice();
+	       	house(open);
+			 	
+	        fences();
+	
+        	trees(175,223+132);
+	        
+            mountainsGrey();
+ 
+            sun(0,0);
+            
+            person7(-155,0+70,true,false);
+            basket();
+            settextstyle(8,0,8);
+            outtextxy(700,550,"GRAVITY");
+			delay(900);
+			page=1-page;
+
+		 
+	}
+}
+
+//beginig of eighth scene
+
+void earth(int x, int y){
+	  setcolor(9); 
+	  setfillstyle(1,9);
+	  circle(x,y,50);
+	  floodfill(x,y,9);
+}
+
+void sunstar(){
+	  setcolor(14); 
+	  setfillstyle(1,14);
+	  circle(520,350,80);
+	  floodfill(560,350,14);
+}
+
+void circular(int xc, int yc, int r){
+		int  x=0; int y=r;
+	    int count=0;
+	    int p=3-2*r;
+	    int page=1;
+		setactivepage(page);
+		setvisualpage(page);
+		cleardevice();
+  while(x<=y){
+
+	  if (p<0){
+	  
+	     x=x+1;
+	     p=p+4*x+6;
+		}
+	  else{
+		 x=x+1;
+	     y=y-1;
+	     p=p+4*(x-y)+10 ;
+		}
+
+      if(count>8){
+		putpixel(xc+x,yc+y,15);
+	    putpixel(xc+y,yc+x,15);
+	  
+	    putpixel(xc-x,yc-y,15);
+	    putpixel(xc-y,yc-x,15);
+	    
+	    putpixel(xc-x,yc+y,15);
+	    putpixel(xc-y,yc+x,15);
+	    
+	    putpixel(xc+x,yc-y,15);
+	    putpixel(xc+y,yc-x,15);
+		
+	}
+    
+
+	delay(9);
+	
+	if(count==30){
+		count=0;
+	  }
+	
+	count++;
+
+	}
+	
+	
+
+}
+
+void strightline(int x1, int y1, int x2, int y2){
+	  int p,dx,dy;
+  
+	  int x,y;
+	  dx=x2-x1;  
+	  dy=y2-y1;
+	  x=x1; 
+	  y=y1;
+	  p=2*dy-dx;
+	  int page=1;
+	  setactivepage(page);
+	  cleardevice();
+      while(x<=x2){
+		   	putpixel(x,y,WHITE);
+		   	x++;
+		   	if(p<0){
+		   		p=p+dy;
+			   }
+			   
+		    else{
+			   	p=p+(2*dy - 2*dx);
+				y++;
+				   }
+				   	   
+			delay(60);
+   }
+getch();
+}
+
+void eigthscene(){
+    int  page=1;
+		
+ 
+    circular(520,350,280);
+
+    for(int t=0; t<3; t++){
+	
+		    sunstar();
+			setcolor(15);
+			settextstyle(8,0,4);
+			outtextxy(380,380,"Sun");
+			earth(800,350);
+		      setcolor(15);
+		    outtextxy(870,250,"Earth");
+		    
+		    line(610,350,660,350);
+			line(660,350,650,345);
+			line(660,350,650,355);
+			settextstyle(8,0,2);   
+			outtextxy(630,370,"F");
+		    line(690,350,735,350); 
+		    line(690,350,700,345);
+			line(690,350,700,355);
+			outtextxy(720,370,"F");
+			delay(1600);
+			}
+
+	 page=1;
+    int i=0; int x=770; int y=260;
+    while(i<170){
+
+		setactivepage(page);
+	    setvisualpage(1-page);		
+        cleardevice();
+        
+		setcolor(15);
+	    setlinestyle(3,0,1);
+	    circle(520,350,280);
+    
+	    setlinestyle(0,0,1); 
+	    sunstar();
+		setcolor(9);
+		earth(x,y); 
+		if(i<4){
+			x=x-10; y=y-20;
+			}
+	
+		else if(i<=15){
+			x=x-10; y=y-10;	
+			}
+	
+		else if(i>15 && i<=27){	
+			x=x-10; y=y-1;		
+			}
+	
+		else if(i>27 && i<45){
+			x=x-9; y=y+6;	
+			}
+	
+		else if(i>=45 && i<65){
+    		x=x-6; y=y+8;
+			
+			}
+	
+		else if(i>=65 && i<=90){
+    		x=x+2; y=y+8;
+			
+			}
+	
+		else if(i>90 && i<=115){
+    		x=x+10; y=y+5;
+			
+			}
+	
+		else if(i>115 && i<=140){
+    		x=x+10; y=y-6;			
+			}
+	
+	 	else if(i>140){
+    		x=x+1; y=y-8;			
+			}
+	
+		i++;
+		delay(170);
+		page=1-page;	
+	} 
+	    delay(900);
+	    page=1;
+	    int end=1;
+	    setcolor(15);
+	    while(end<3){
+			setactivepage(page);
+		    setvisualpage(1-page);		
+	        cleardevice();
+	        settextstyle(0,0,20);
+			outtextxy(300,300,"the end");
+	        page=1-page;
+			delay(900);
+			end++;
+		  }
+	
+}
 
 main()
  {
@@ -1489,6 +2246,16 @@ main()
 	    thirdscene();
 	    cleardevice();
 	    fourthscene();
+		cleardevice();
+	    fifthscene();
+	    sixthscene();
+	    cleardevice();
+	    seventhscene();
+	    cleardevice();
+		setbkcolor(0);
+	    cleardevice();
+	    setbkcolor(0); 
+	    eigthscene();
 		
 	    getch(); 
 	    closegraph();
